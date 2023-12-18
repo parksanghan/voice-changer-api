@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Streaming</title>
+</head>
+<body>
+    <video id="video" width="640" height="480" autoplay></video>
+
+    <script>
+        const videoElement = document.getElementById('video');
+        const constraints = { video: true };
+
+        navigator.mediaDevices.getUserMedia(constraints)
+            .then((stream) => {
+                videoElement.srcObject = stream;
+
+                const socket = io('http://localhost:8000');  // 서버 주소에 맞게 변경
+                const mediaRecorder = new MediaRecorder(stream);
+
+                mediaRecorder.ondataavailable = (event) => {
+                    if (event.data.size > 0) {
+                        socket.emit('videoFrame', event.data);
+                    }
+                };
+
+                mediaRecorder.start(1000);  // 1초마다 프레임 전송 (조절 가능)
+            })
+            .catch((error) => {
+                console.error('Error accessing camera:', error);
+            });
+    </script>
+</body>
+</html>

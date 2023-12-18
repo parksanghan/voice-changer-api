@@ -1,0 +1,23 @@
+<!-- templates/join.html -->
+<html>
+    <head>
+        <title>Join Room</title>
+    </head>
+    <body>
+        <h1>Welcome to Room {{ room_id }}</h1>
+        <p>Display Name: {{ display_name }}</p>
+        <p>Mute Audio: {{ mute_audio }}</p>
+        <p>Mute Video: {{ mute_video }}</p>
+
+        <!-- 웹소켓 통신 관련 예시 코드 (필요시 추가 및 수정) -->
+        <script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script>
+        <script>
+            var socket = io.connect('http://localhost:8000');  // 서버 주소에 맞게 수정
+            socket.on('connect', function() {
+                console.log('Connected to the server');
+            });
+
+            // 여기에 추가적인 웹소켓 이벤트 핸들러를 작성할 수 있습니다.
+        </script>
+    </body>
+</html>
