@@ -1,7 +1,7 @@
  
 from fastapi import APIRouter
 
-# API 테스트로 보임 
+# API 테스트로 보이는데 
 class MMVC_Rest_Hello:
     def __init__(self):
 

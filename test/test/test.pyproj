@@ -4,7 +4,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>521dce32-e41c-435a-97ae-b8f1f3e866e3</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>test.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -12,7 +13,10 @@
     <Name>test</Name>
     <RootNamespace>test</RootNamespace>
     <TestFramework>Pytest</TestFramework>
-    <InterpreterId>CondaEnv|CondaEnv|env</InterpreterId>
+    <InterpreterId>Global|PythonCore|3.11</InterpreterId>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
+    <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
+    <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -24,6 +28,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="const.py" />
+    <Compile Include="control.py" />
+    <Compile Include="main.py" />
     <Compile Include="mods\log_control.py" />
     <Compile Include="mods\ssl.py" />
     <Compile Include="restapi\MMVC_Rest.py" />
@@ -31,7 +37,6 @@
     <Compile Include="restapi\MMVC_Rest_Hello.py" />
     <Compile Include="restapi\MMVC_Rest_VoiceChanger.py" />
     <Compile Include="restapi\mods\FileUploader.py" />
-    <Compile Include="test.py" />
     <Compile Include="voice_changer\Beatrice\Beatrice.py" />
     <Compile Include="voice_changer\Beatrice\BeatriceModelSlotGenerator.py" />
     <Compile Include="voice_changer\Beatrice\BeatriceSettings.py" />
