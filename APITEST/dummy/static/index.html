@@ -1,0 +1,54 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Video Streaming</title>
+</head>
+<body>
+    <h1>Welcome to the Video Streaming Room</h1>
+    <form id="joinForm" onsubmit="joinRoom(event)">
+        <label for="display_name">Display Name:</label>
+        <input type="text" id="display_name" name="display_name" required>
+        <br>
+        <label for="mute_audio">Mute Audio:</label>
+        <input type="checkbox" id="mute_audio" name="mute_audio">
+        <br>
+        <label for="mute_video">Mute Video:</label>
+        <input type="checkbox" id="mute_video" name="mute_video">
+        <br>
+        <input type="hidden" id="room_id" name="room_id" value="{{ room_id }}">
+        <button type="submit">Join Room</button>
+    </form>
+
+    <script>
+        async function joinRoom(event) {
+            event.preventDefault();
+
+            const display_name = document.getElementById('display_name').value;
+            const mute_audio = document.getElementById('mute_audio').checked ? 1 : 0;
+            const mute_video = document.getElementById('mute_video').checked ? 1 : 0;
+            const room_id = document.getElementById('room_id').value;
+
+            // Send the data to the server using WebSocket
+            const socket = new WebSocket(`ws://localhost:5000/ws/${room_id}`);
+            socket.onopen = () => {
+                const data = {
+                    display_name,
+                    mute_audio,
+                    mute_video,
+                    room_id
+                };
+                socket.send(JSON.stringify(data));
+            };
+
+            socket.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                console.log(data); // Handle the server response as needed
+            };
+        }
+    </script>
+</body>
+</html>
