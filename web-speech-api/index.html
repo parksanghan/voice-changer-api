@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Helper</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Meeting Helper</h1>
+        <div class="base-line"></div>
+    </header>
+
+    <div class="contents">
+        <p>일단 Speech Recognition해서 텍스트만 번역한 상태입니다. 추후에 이 텍스트를 어떠한 기준으로 랜더링할지 결정해야합니다. </p>
+        <section class="wrapper">
+            <div class="result">
+                <p class="description ">회의를 하시다보면 중요 키워드가 여기에 표시됩니다!</p>
+            </div>
+            <div class="recognized-textarea">
+                <span class="final" id="final_span"></span>
+                <span class="interim" id="interim_span"></span>
+            </div>
+            <div class="Button-area">
+                <button class="mic"> 회의 시작
+                    <span id="recording-state"></span>
+                </button>
+                <button class="remove"> 위의 대본 삭제하기
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="base-line"></div>
+        <p class="inc"> ⓒ 고른햇살 Inc. All Rights Reserved. </p>
+    </footer>
+
+</body>
+
+</html>

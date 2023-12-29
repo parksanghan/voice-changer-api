@@ -1,0 +1,82 @@
+.base-line {
+    border: 1px solid lightgray;
+}
+
+
+button {
+    text-align: center;
+    min-width: 150px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    outline: none;
+    width: 20px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 20px 10px ;
+    padding: 10px; 
+}
+
+.mic {
+    background-color: #333;
+    color: #fff;
+}
+.remove {
+    background-color: salmon;
+    color: #fff;
+}
+
+.contents {
+    padding: 60px 30px;
+    min-height: 70vh;
+}
+
+.result {
+    height: 350px;
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.recognized-textarea {
+    height: 50px;
+    width: 50%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    overflow: scroll;
+}
+
+#recording-state {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin-left: 9px;
+}
+.on {
+    background-color: red !important;
+}
+.off {
+    background-color: #ccc !important;
+}
+.description {
+    text-align: center;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    font-size: 15px;
+    font-weight: 500;
+}
+.no {
+    display: none;
+}
+
+.Button-area {
+    display: flex;
+    
+}
